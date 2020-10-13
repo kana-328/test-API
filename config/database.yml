@@ -3,7 +3,7 @@ default: &default
   encoding: unicode
   host: db
   username: postgres
-  password: password
+  password: <%= ENV.fetch('POSTGRES_PASSWORD') %>
   pool: 5
   port: <%= ENV.fetch('DATABASE_PORT') { 5432 } %>
   
