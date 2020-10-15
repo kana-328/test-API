@@ -1,0 +1,2 @@
+class PackagesAndCategory < ApplicationRecord
+end
