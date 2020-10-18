@@ -23,6 +23,7 @@ gem 'faker'
 gem 'kaminari'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
+gem 'rubyzip', '2.3.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -45,6 +46,7 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'spring-commands-rspec'
+  gem 'rails-erd'
 end
 
 group :test do
