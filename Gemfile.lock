@@ -360,6 +360,7 @@ DEPENDENCIES
   ransack
   rspec-rails
   rubocop-airbnb
+  rubyzip (= 2.3.0)
   sassc-rails
   selenium-webdriver
   spring
