@@ -1,5 +1,5 @@
 class PackagesController < ApplicationController
   def new
-    @packages = Package.new
+    @package = Package.new
   end
 end

@@ -1,3 +1,3 @@
 class User < ApplicationRecord
-  has_many :packages
+  has_many :packages, dependent: :destroy
 end
