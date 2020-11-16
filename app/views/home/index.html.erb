@@ -1,1 +1,23 @@
 <h1>helloworld!!!</h1>
+<% provide(:title, 'ペット登録') %>
+<%= form_for(@pet, url: user_pets_path) do |f| %>
+<%= render "devise/shared/error_messages", resource: @pet %>
+  <div class="container">
+    <div class="card o-hidden border-0 shadow-lg my-5">
+      <div class="card-body p-0">
+        <div class="row">
+          <div class="col-lg-2 d-none d-lg-block bg-register-image"></div>
+          <div class="col-lg-8">
+            <div class="p-5">
+              <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-4">ペット登録</h1>
+                <hr>
+              </div>
+            <%= render 'shared/pet_form', f: f %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
