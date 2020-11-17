@@ -25,5 +25,4 @@ CSV.foreach(savePath, encoding: "Shift_JIS:UTF-8") do |row|
   prefecture = Prefecture.find_or_create_by(:name => prefName)
   City.find_or_create_by(:name => cityName, prefecture_id: prefecture.id)
 end
-
-File.unlink savePath
+User.create!(name: 'example', email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

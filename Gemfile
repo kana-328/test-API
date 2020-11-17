@@ -24,6 +24,10 @@ gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 gem 'bootstrap-sass'
 gem 'rubyzip', '2.3.0'
+gem 'activeadmin'
+gem 'cancancan'
+gem 'draper'
+gem 'pundit'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
