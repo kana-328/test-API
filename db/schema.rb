@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_18_145226) do
+ActiveRecord::Schema.define(version: 2020_11_18_145405) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,8 @@ ActiveRecord::Schema.define(version: 2020_11_18_145226) do
     t.date "day"
     t.integer "city_id"
     t.integer "prefecture_id"
+    t.bigint "photographer_id"
+    t.index ["photographer_id"], name: "index_packages_on_photographer_id"
   end
 
   create_table "packages_and_categories", force: :cascade do |t|
@@ -107,4 +109,5 @@ ActiveRecord::Schema.define(version: 2020_11_18_145226) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "packages", "photographers"
 end
