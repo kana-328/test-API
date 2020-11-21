@@ -1,0 +1,12 @@
+<% if @photographer.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-danger">
+      The form contains <%= pluralize(@photographer.errors.count, "error") %>.
+    </div>
+    <ul>
+    <% @photographer.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
