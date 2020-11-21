@@ -7,7 +7,7 @@ class PhotographersController < ApplicationController
     @photographer = Photographer.new(photographer_params)
     if @photographer.save
       flash[:notice] = 'カメラマン情報を登録しました'
-      redirect_to photographer_path
+      redirect_to @photographer
     else
       render "new"
       flash[:danger] = '登録が失敗しました'
@@ -15,6 +15,7 @@ class PhotographersController < ApplicationController
   end
 
   def show
+    @photographer = Photographer.find(params[:id])
   end
 
   private

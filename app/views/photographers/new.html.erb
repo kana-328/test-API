@@ -1,7 +1,7 @@
  <h1 class="h4 text-gray-900 mb-4 text-center">カメラマン登録</h1>
   <div class="container">
     <div class="justify-content-center row">
-      <%= form_for(@photographer) do |f| %>
+      <%= form_for(@photographer, url: photographers_path) do |f| %>
       <%= render 'shared/error_messages' %>
       <div class="col-md-offset-3 form-group">
         <%= f.label :name, '名前'%>
@@ -23,12 +23,14 @@
         <%= f.label :password_confirmation, 'パスワード確認用' %>
         <%= f.password_field :password_confirmation, autocomplete: "new-password",type: "password", class: "form-control", id: "exampleRepeatPassword" %>
       </div>
-      <div class="form-check text-center">
-        <%= f.label :accepted, '利用規約に同意する'%>
-        <%= f.check_box :accepted, :as => :boolean, class: "form-check-input" %>
-      </div>  
+      <div class="row">
+        <div class="form-check text-center">
+          <%= f.label :accepted, '利用規約に同意'%>
+          <%= f.check_box :accepted, :as => :boolean, class: "form-check-input" %>
+        </div>
+      </div>
     <div class="form-group text-center">
-      <%= f.submit "登録" , class: "btn btn-light mt-20" %>  
+      <%= f.submit "登録" , class: "btn btn-primary" %>  
     </div>
   <% end %>
   </div>
