@@ -28,6 +28,9 @@ gem 'activeadmin'
 gem 'cancancan'
 gem 'draper'
 gem 'pundit'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog', '1.40.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

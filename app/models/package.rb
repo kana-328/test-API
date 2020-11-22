@@ -4,4 +4,5 @@ class Package < ApplicationRecord
   belongs_to :photographer
   has_one :city
   has_one :prefecture
+  mount_uploader :image, ImageUploader
 end

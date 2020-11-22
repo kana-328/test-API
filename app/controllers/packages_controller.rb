@@ -8,7 +8,7 @@ class PackagesController < ApplicationController
   end
 
   private
-    def user_params
-      params.require(:user).permit(:name)
+    def package_params
+      params.require(:package).permit(:title, :descript, :day, {image: []})
     end
 end
