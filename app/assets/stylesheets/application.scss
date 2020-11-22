@@ -21,3 +21,30 @@
   margin-top: 20px;
   margin-left: 25px;
 }
+
+.profile-line{
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: -webkit-linear-gradient(left, rgb(245, 186, 148), rgb(236, 162, 78), rgb(245, 186, 148));
+}
+
+.photographer{
+  list-style: none;
+  padding-right: 20px;
+  li{
+    overflow: auto;
+
+    font-size: 20px;
+  }
+}
+
+.profile-name{
+  margin-left: 15px;
+}
+
+.bi-list{
+  background: linear-gradient(to top right, rgb(255, 153, 0), white);
+  color: white;
+  margin-top: 30px;
+}

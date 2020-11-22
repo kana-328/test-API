@@ -1,4 +1,10 @@
 class PhotographersController < ApplicationController
+
+
+  def show
+    @photographer = Photographer.find(params[:id])
+  end
+
   def new
     @photographer = Photographer.new
   end
@@ -14,9 +20,6 @@ class PhotographersController < ApplicationController
     end
   end
 
-  def show
-    @photographer = Photographer.find(params[:id])
-  end
 
   private
 
