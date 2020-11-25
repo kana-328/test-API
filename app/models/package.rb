@@ -4,7 +4,7 @@ class Package < ApplicationRecord
   belongs_to :photographer
   has_one :city
   has_one :prefecture
-  mount_uploader :image, ImageUploader
+  mount_uploaders :image, ImageUploader
   validate  :image_size
 
   private
