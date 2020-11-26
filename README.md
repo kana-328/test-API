@@ -7,7 +7,7 @@ docker-compose build
 
 docker-compose up
 
-docker exec -it web bash (コンテナに入る)
+docker-compose exec web bash (コンテナに入る)
 
 bundle exec rails db:create
 
