@@ -1,0 +1,40 @@
+ <h1 class="h4 text-gray-900 mb-4 text-center">カメラマン登録</h1>
+  <hr>
+  <div class="container">
+    <div class="justify-content-center row">
+      <%= form_for(@photographer) do |f| %>
+      <%= render 'shared/error_messages' %>
+      <div class="col-md-offset-3 form-group">
+        <%= f.label :name, '名前'%>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+      <div class="col-md-offset-3 form-group">
+        <%= f.label :address, '住所'%>
+        <%= f.text_field :address, class: "form-control" %>
+      </div>
+      <div class="col-md-offset-3 form-group">
+        <%= f.label :email, 'メールアドレス'%>
+        <%= f.text_field :email, class: "form-control" %>
+      </div>
+      <div class="col-md-offset-3 form-group">
+        <%= f.label :password, 'パスワード(４〜６文字)'%>
+        <%= f.password_field :password, autocomplete: "new-password", type: "password", class: "form-control", id: "exampleInputPassword" %>
+      </div>
+      <div class="col-md-offset-3 form-group">
+        <%= f.label :password_confirmation, 'パスワード確認用' %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password",type: "password", class: "form-control", id: "exampleRepeatPassword" %>
+      </div>
+      <div class="row">
+        <div class="form-check text-center">
+          <%= f.label :accepted, '利用規約に同意'%>
+          <%= f.check_box :accepted, :as => :boolean, checked: false, class: "form-check-input" %>
+        </div>
+      </div>
+    <div class="form-group text-center">
+      <%= f.submit "登録" , class: "btn btn-primary" %>  
+    </div>
+  <% end %>
+  </div>
+</div>
+
+    

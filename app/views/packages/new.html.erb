@@ -1,6 +1,36 @@
-
-<%= form_for(@package, url: packages_path,) do |f| %>
-    <%= f.title :体重 %>
-    <%= f.text_field :title %>
-    <%= f.submit "登録" , class: "btn btn-danger outline" %>
-<% end %>
+<div class="container package-new-area">
+  <%= form_for(@package, url:  photographer_packages_path) do |f| %>
+    <%= hidden_field_tag :photographer_id, @package.photographer_id %>
+    <div class="col-md-offset-2 form-group">
+      <%= f.label :day, '日付(必須)' %>
+      <%= f.date_field :day, include_blank: true , class: 'form-control'%>
+    </div>
+    <div class="col-md-offset-2 form-group">
+      <%= f.label :title, 'タイトル(必須)'%>
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+    <div class="col-md-offset-2 form-group">
+      <%= f.label :descript, '説明'%>
+      <%= f.text_area :descript, size: "30x20", class: "form-control"  %>
+    </div>
+    <div class="col-md-offset-2 form-group">
+      <%= f.label :price, '値段', size: "5x5"  %>
+      <br>
+      <%= f.text_field :price %>円
+    </div>
+    <div class="col-md-offset-2 form-group">
+      <%= f.label :画像 %>
+      <%= f.file_field :image, multiple: true %>
+    </div>
+    <%= f.label :category, 'カテゴリ' %>
+    <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category| %> 
+        <%= category.label do %>
+          <%= category.check_box %>
+        <%= category.text %>
+      <% end %>
+    <% end %>
+    <div class="form-group text-center">
+      <%= f.submit "登録" , class: "btn btn-primary" %>  
+    </div>
+  <% end %>
+</div>
