@@ -3,6 +3,7 @@
   <%= category.name %>
   <% category.packages.each do |package| %>
     <%= package.title %>
+    <%= image_tag package.images.first.url  %>
   <% end %>
   <hr>
 <% end %>

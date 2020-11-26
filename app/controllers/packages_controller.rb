@@ -18,6 +18,6 @@ class PackagesController < ApplicationController
 
   private
     def package_params
-      params.require(:package).permit(:title, :descript, :day, :price,  {image: [], category_ids: []} )
+      params.require(:package).permit(:title, :descript, :day, :price,  {images: [], category_ids: []} )
     end
 end
