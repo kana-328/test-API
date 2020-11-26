@@ -1,1 +1,8 @@
-<h1>helloworld!!!</h1>
+<h3>パッケージ一覧</h3>
+<% @category.each do |category| %>
+  <%= category.name %>
+  <% category.packages.each do |package| %>
+    <%= package.title %>
+  <% end %>
+  <hr>
+<% end %>

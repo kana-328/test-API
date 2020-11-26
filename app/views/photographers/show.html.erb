@@ -9,7 +9,7 @@
         <hr class="profile-line">
           自己紹介
           <br>
-          <%=  @photographer.descript %>
+          <%= @photographer.descript %>
         <hr class="profile-line">
       </li>
     </ul>  
@@ -23,6 +23,7 @@
       </svg>パッケージ登録
     <% end %>
     </div>
+    <%= link_to 'プロフィール編集',edit_photographer_path(id: @photographer.id)  %>
   </div>
 </div>
 

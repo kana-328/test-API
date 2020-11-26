@@ -7,7 +7,6 @@ class PackagesController < ApplicationController
     @id = params[:photographer_id]
     @package = Package.new(package_params)
     @package.photographer_id = @id
-    raise
     if @package.save
       flash[:notice] = 'パッケージを登録しました'
       redirect_to photographer_path(id: @package.photographer_id)
@@ -17,11 +16,8 @@ class PackagesController < ApplicationController
     end
   end
 
-  def edit
-  end
-
   private
     def package_params
-      params.require(:package).permit(:title, :descript, :day, :price, {image: []} )
+      params.require(:package).permit(:title, :descript, :day, :price,  {image: [], category_ids: []} )
     end
 end

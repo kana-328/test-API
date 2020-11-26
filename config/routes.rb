@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root to: "home#index"
   resources :users,          only: [:new, :create, :show]
-  resources :photographers,  only: [:new, :create, :show, :edit] do
+  resources :photographers,  only: [:new, :create, :show, :edit, :update] do
     resources :packages,       only: [:new, :create]
   end
 end

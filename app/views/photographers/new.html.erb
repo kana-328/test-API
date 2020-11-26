@@ -1,7 +1,8 @@
  <h1 class="h4 text-gray-900 mb-4 text-center">カメラマン登録</h1>
+  <hr>
   <div class="container">
     <div class="justify-content-center row">
-      <%= form_for(@photographer, url: photographers_path) do |f| %>
+      <%= form_for(@photographer) do |f| %>
       <%= render 'shared/error_messages' %>
       <div class="col-md-offset-3 form-group">
         <%= f.label :name, '名前'%>

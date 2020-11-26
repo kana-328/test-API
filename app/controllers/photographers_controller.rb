@@ -1,6 +1,5 @@
 class PhotographersController < ApplicationController
 
-
   def show
     @photographer = Photographer.find(params[:id])
   end
@@ -20,6 +19,19 @@ class PhotographersController < ApplicationController
     end
   end
 
+  def edit
+    @photographer = Photographer.find(params[:id])
+  end
+
+  def update
+    @photographer = Photographer.find(params[:id])
+    if @photographer.update_attributes(photographer_params)
+      flash[:success] = "Profile updated"
+      redirect_to @photographer
+    else
+      render 'edit'
+    end
+  end
 
   private
 
