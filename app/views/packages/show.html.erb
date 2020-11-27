@@ -9,7 +9,7 @@
     <hr>
   </div>
   <div class="row">
-    <%= @package.photographer.image %>
+    <%= gravatar_for @package.photographer %>
     <%= link_to @package.photographer.name, photographer_path(@package.photographer.id) %>
     <hr>
   </div>
