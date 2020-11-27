@@ -6,6 +6,7 @@ class Package < ApplicationRecord
   has_one :city
   has_one :prefecture
   mount_uploaders :images, ImageUploader
+  serialize :images, JSON
   validate  :image_size
 
   private

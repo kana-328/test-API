@@ -1,3 +1,16 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.headerimage img{
+  width: 160px;
+  height: 100px;
+  margin-left: 15px;
+}
+
+.toppage-images{
+  border: solid;
+  border-color: #e2a603e8;
+  display: inline-block;
+  border-radius: 8px
+}

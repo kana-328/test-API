@@ -20,7 +20,7 @@
     </div>
     <div class="col-md-offset-2 form-group">
       <%= f.label :画像 %>
-      <%= f.file_field :image, multiple: true %>
+      <%= f.file_field :images, multiple: true %>
     </div>
     <%= f.label :category, 'カテゴリ' %>
     <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category| %> 

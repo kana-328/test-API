@@ -1,9 +1,10 @@
-<h3>パッケージ一覧</h3>
 <% @category.each do |category| %>
-  <%= category.name %>
+  <h3><%= category.name %></h3>
   <% category.packages.each do |package| %>
+    <div class='toppage-images' >
+      <%= link_to image_tag(package.images[0].to_s), photographer_package_path(photographer_id: package.photographer_id, id: package.id) %>
+    </div>
     <%= package.title %>
-    <%= image_tag package.images.first.url  %>
   <% end %>
   <hr>
 <% end %>
