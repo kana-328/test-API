@@ -1,18 +1,5 @@
 <header>
   <%= link_to image_tag("/assets/headerimage-43044260c9c00ae390f6603ecb4c3801714aa8ef7793b4902d67d40e86565875.png"), "/" , {class: "headerimage"}%>
   <%= link_to "カメラマン新規登録", new_photographer_path %>
-  <div class="container">
-    <nav>
-      <ul class="dropdown-menu">
-        <li><%= link_to "Profile", '#' %></li>
-        <li><%= link_to "Settings", '#' %></li>
-        <li><%= link_to "カメラマン新規登録", new_photographer_path %></li>
-        <li></li>
-        <li class="divider"></li>
-        <li>
-          <%= link_to "Log out", '#', method: :delete %>
-        </li>
-      </ul>
-    </nav>
-  </div>
+  <%= link_to "ログイン", '#', method: :delete %>
 </header>
