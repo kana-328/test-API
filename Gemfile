@@ -20,7 +20,6 @@ gem 'jquery-rails'
 gem 'rails-controller-testing'
 gem 'faker'
 gem 'kaminari'
-gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 gem 'bootstrap-sass'
 gem 'rubyzip', '2.3.0'
@@ -60,6 +59,10 @@ group :test do
   gem 'selenium-webdriver'
   gem 'capybara', '~> 2.15.2'
   gem 'launchy', '~>2.4.3'
+end
+
+group :production do
+  gem 'pg', '>= 0.18', '< 2.0'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

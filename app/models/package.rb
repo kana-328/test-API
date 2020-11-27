@@ -5,15 +5,16 @@ class Package < ApplicationRecord
   belongs_to :photographer
   has_one :city
   has_one :prefecture
-  mount_uploaders :image, ImageUploader
+  mount_uploaders :images, ImageUploader
+  serialize :images, JSON
   validate  :image_size
 
   private
 
     # アップロードされた画像のサイズをバリデーションする
     def image_size
-      if image.size > 5.megabytes
-        errors.add(:image, "should be less than 5MB")
+      if images.size > 5.megabytes
+        errors.add(:images, "should be less than 5MB")
       end
     end
 end

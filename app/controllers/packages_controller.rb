@@ -8,7 +8,7 @@ class PackagesController < ApplicationController
     @package = Package.new(package_params)
     @package.photographer_id = @id
     if @package.save
-      flash[:notice] = 'パッケージを登録しました'
+      flash[:success] = 'パッケージを登録しました'
       redirect_to photographer_path(id: @package.photographer_id)
     else
       render "new"
@@ -16,8 +16,12 @@ class PackagesController < ApplicationController
     end
   end
 
+  def show
+    @package = Package.find(params[:id])
+  end
+
   private
     def package_params
-      params.require(:package).permit(:title, :descript, :day, :price,  {image: [], category_ids: []} )
+      params.require(:package).permit(:title, :descript, :day, :price,  { category_ids: [], images: []} )
     end
 end
