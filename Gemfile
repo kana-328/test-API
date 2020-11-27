@@ -64,5 +64,5 @@ group :production do
   gem 'pg', '>= 0.18', '< 2.0'
   gem 'fog', '1.40.0'
 end
-
+gem "aws-sdk", "~> 2.3"
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
