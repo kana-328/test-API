@@ -26,7 +26,20 @@ class PackagesController < ApplicationController
     @package = Package.find(params[:id])
   end
 
+  def update
+    @package = Package.find(params[:id])
+    if @package.update_attributes(package_params)
+      flash[:success] = "パッケージを編集しました"
+      redirect_to photographer_path(id: @package.photographer_id)
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
+    package = Package.find_by(id: params[:id]).destroy
+    flash[:notice] = 'パッケージを削除しました'
+    redirect_to photographer_path(id: package.photographer_id)
   end
   
   def get_cities

@@ -1,2 +1,52 @@
- <%= link_to "パッケージ削除", edit_photographer_package_path(photographer_id: @package.photographer.id ), method: :delete,
-  class: 'btn btn--orange',data: { confirm: "本当に消してもよろしいですか?" } %>  
+<div class="container package-new-area">
+<%= form_for(@package, url: photographer_package_path) do |f| %>
+  <%= hidden_field_tag :photographer_id, @package.photographer_id %>
+  <div class="col-md-offset-2 f-group">
+    <%= f.label :day, '曜日(必須)' %><br>
+    <%= f.check_box :day, {multiple: true}, "月曜日", nil %>月曜日
+    <%= f.check_box :day, {multiple: true}, "火曜日", nil %>火曜日
+    <%= f.check_box :day, {multiple: true}, "水曜日", nil %>水曜日
+    <%= f.check_box :day, {multiple: true}, "木曜日", nil %>木曜日
+    <%= f.check_box :day, {multiple: true}, "金曜日", nil %>金曜日
+    <%= f.check_box :day, {multiple: true}, "土曜日", nil %>土曜日
+    <%= f.check_box :day, {multiple: true}, "日曜日", nil %>日曜日
+  </div>
+  <div class="col-md-offset-2 f-group" id="prefecture-area">
+    <%= f.label :prefecture, 'エリア' %><br>
+    <%= collection_select :package, :prefecture_id, Prefecture.all, :id, :name %>
+  </div>
+  <div class="city-area col-md-offset-2 form-group">
+    <%= render partial: 'select_city', locals: {prefecture_id: Prefecture.first.id} %>
+  </div>
+  <div class="col-md-offset-2 f-group">
+    <%= f.label :title, 'タイトル(必須)'%>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+  <div class="col-md-offset-2 f-group">
+    <%= f.label :descript, '説明'%>
+    <%= f.text_area :descript, size: "30x20", class: "form-control"  %>
+  </div>
+  <div class="col-md-offset-2 form-group">
+    <%= f.label :price, '値段', size: "5x5"  %>
+    <br>
+    <%= f.text_field :price %>円
+  </div>
+  <div class="col-md-offset-2 form-group">
+    <%= f.label :画像 %>
+    <%= f.file_field :images, multiple: true %>
+  </div>
+  <div class="col-md-offset-2 form-group">
+    <%= f.label :category, 'カテゴリ' %>
+      <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category| %> 
+        <%= category.label do %>
+          <%= category.check_box %>
+        <%= category.text %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="form-group text-center">
+    <%= f.submit "編集" , class: "btn btn-primary" %>  
+  </div>
+<% end %>
+</div>
+ <%= link_to "パッケージ削除", photographer_package_path, method: :delete, class: 'btn btn--orange',data: { confirm: "本当に消してもよろしいですか?" } %>  
