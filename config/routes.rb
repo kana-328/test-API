@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root to: "home#index"
   resources :photographers,  only: [:new, :create, :show, :edit, :update] do
-    resources :packages,       only: [:new, :create, :show, :edit, :update, :delete]
+    resources :packages,       only: [:new, :create, :show, :edit, :update, :delete]do
+      collection do
+        get 'get_cities' 
+      end
+    end
   end
 end

@@ -16,3 +16,18 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+
+$(document).on('change', '#package_prefecture_id', function() {
+  return $.ajax({
+    type: 'GET',
+    url: '/photographers/:photographer_id/packages/get_cities',
+    data: {
+      prefecture_id: $(this).val()
+    }
+  }).done(function(data) {
+    return $('.city-area').html(data);
+    console.log("ok")
+  }).fail(function(data){
+    console.log('errors.messages')
+  });
+});

@@ -28,8 +28,12 @@ class PackagesController < ApplicationController
   def destroy
   end
   
+  def get_cities
+    render partial: 'select_city', locals: {prefecture_id: params[:prefecture_id]}
+  end
+
   private
     def package_params
-      params.require(:package).permit(:title, :descript, :day, :price, :prefecture_id, city_id, { category_ids: [], images: []} )
+      params.require(:package).permit(:title, :descript, :price, :prefecture_id, :city_id, { category_ids: [], images: [], day: []} )
     end
 end
