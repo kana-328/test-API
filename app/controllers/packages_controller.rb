@@ -22,9 +22,14 @@ class PackagesController < ApplicationController
   end
 
   def edit
+    @package = Package.find(params[:id])
   end
+
+  def destroy
+  end
+  
   private
     def package_params
-      params.require(:package).permit(:title, :descript, :day, :price,  { category_ids: [], images: []} )
+      params.require(:package).permit(:title, :descript, :day, :price, :prefecture_id, city_id, { category_ids: [], images: []} )
     end
 end
