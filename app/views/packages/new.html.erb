@@ -6,6 +6,10 @@
       <%= f.date_field :day, include_blank: true , class: 'form-control'%>
     </div>
     <div class="col-md-offset-2 form-group">
+      <%= f.label :day, 'エリア' %>
+      <%= f.collection_select :prefecture , Prefecture.all, :id, :name%>
+    </div>
+    <div class="col-md-offset-2 form-group">
       <%= f.label :title, 'タイトル(必須)'%>
       <%= f.text_field :title, class: "form-control" %>
     </div>

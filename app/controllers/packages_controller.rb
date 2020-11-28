@@ -1,4 +1,9 @@
 class PackagesController < ApplicationController
+
+  def show
+    @package = Package.find(params[:id])
+  end
+
   def new
     @package = Package.new
   end
@@ -16,10 +21,8 @@ class PackagesController < ApplicationController
     end
   end
 
-  def show
-    @package = Package.find(params[:id])
+  def edit
   end
-
   private
     def package_params
       params.require(:package).permit(:title, :descript, :day, :price,  { category_ids: [], images: []} )

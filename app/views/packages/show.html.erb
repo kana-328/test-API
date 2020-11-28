@@ -16,4 +16,9 @@
   <div class="row">
     <%= @package.descript %>
   </div>
+    <hr>
+  <div class="row">
+    <%= link_to "依頼する", "#" , class: 'btn btn--orange'%>
+    <%= link_to "編集する", edit_photographer_package_path(photographer_id: @package.photographer.id ) , class: 'btn btn--orange'%>
+  </div>
 </div>
