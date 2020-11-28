@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_26_162611) do
+ActiveRecord::Schema.define(version: 2020_11_28_095940) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2020_11_26_162611) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "images"
-    t.date "day"
+    t.string "day"
     t.integer "city_id"
     t.integer "prefecture_id"
     t.bigint "photographer_id"

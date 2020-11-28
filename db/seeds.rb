@@ -25,3 +25,19 @@ CSV.foreach(savePath, encoding: "Shift_JIS:UTF-8") do |row|
   prefecture = Prefecture.find_or_create_by(:name => prefName)
   City.find_or_create_by(:name => cityName, prefecture_id: prefecture.id)
 end
+Category.create!(
+  [
+    {
+      id: 1, 
+      name: 'ライフイベント'
+    },
+    {
+      id: 2,
+      name: 'ワーク'
+    },
+    {
+      id: 3,
+      name: 'アクティビティ'
+    }
+  ]
+)

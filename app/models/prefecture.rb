@@ -1,4 +1,4 @@
 class Prefecture < ApplicationRecord
   has_many :cities
-  belongs_to :package
+  has_one :package
 end
