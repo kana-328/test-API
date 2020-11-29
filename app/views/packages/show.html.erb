@@ -1,22 +1,6 @@
-<div class="swiper-container">
-    <!-- 全スライドをまとめるラッパー -->
-    <div class="swiper-wrapper">
-        <!-- 各スライド -->
-      <% @package.images.each do |image| %>
-      <div class="swiper-slide">
-        <%= image_tag image.to_s, class: 'package-top-image' %>
-      </div>
-      <% end %>
-    </div>
-    <!-- ページネーションを表示する場合 -->
-    <div class="swiper-pagination"></div>
-    <!-- 前後スライドへのナビゲーションボタン(矢印)を表示する場合 -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
- 
-    <!-- スクロールバーを表示する場合 -->
-    <div class="swiper-scrollbar"></div>
-</div>
+<% @package.images.each do |image| %>
+  <%= image_tag image.to_s, class: 'package-top-image' %>
+<% end %>
 <div class="container text-center">
   <div class="row">
   </div>
