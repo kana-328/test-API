@@ -1,6 +1,7 @@
 class PhotographersController < ApplicationController
   before_action :logged_in_photographer, only: [:edit, :update]
   before_action :correct_photographer, only: [:edit, :update]
+  
   def show
     @photographer = Photographer.find(params[:id])
     @packages = @photographer.packages.page(params[:page])

@@ -8,6 +8,7 @@ class Package < ApplicationRecord
   mount_uploaders :images, ImageUploader
   serialize :images, JSON
   validate  :image_size
+  validates :price, numericality: { only_integer: true }
 
   private
 

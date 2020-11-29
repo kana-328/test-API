@@ -1,11 +1,15 @@
 class Photographer < ApplicationRecord
   attr_accessor :remember_token
   has_many :packages, dependent: :destroy
-  validates :name, presence: true
+  validates :address, allow_blank: true, length: { maximum: 100 }
+  validates :name, presence: true, allow_blank: true, length: { maximum: 15 }
   validates :email, presence: true
+  validates :email, length: { maximum: 255 },
+  format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i },
+  uniqueness: { case_sensitive: false }
   validates_acceptance_of :accepted, allow_nil: false, on: :create
   has_secure_password
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 6, maximum: 6 }
 
   class << self
   def digest(string)
