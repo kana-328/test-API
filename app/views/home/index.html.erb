@@ -1,10 +1,11 @@
 <% @category.each do |category| %>
-  <h3><%= category.name %></h3>
-  <% category.packages.each do |package| %>
-    <div class='toppage-images' >
-      <%= link_to image_tag(package.images[0].to_s), photographer_package_path(photographer_id: package.photographer_id, id: package.id) %>
-    </div>
-    <%= package.title %>
-  <% end %>
-  <hr>
+  <h3 class="category-name"><%= category.name %></h3>
+  <div class='items'>
+    <% category.packages.each do |package| %>
+      <div class='item'>
+        <%= link_to image_tag(package.images[0].to_s), photographer_package_path(photographer_id: package.photographer_id, id: package.id), class: "category-image" %><br>
+        <%= package.title %> 
+      </div>
+    <% end %>
+  </div>
 <% end %>

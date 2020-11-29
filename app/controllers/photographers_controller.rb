@@ -2,6 +2,7 @@ class PhotographersController < ApplicationController
 
   def show
     @photographer = Photographer.find(params[:id])
+    @packages = @photographer.packages.page(params[:page])
   end
 
   def new
@@ -26,10 +27,11 @@ class PhotographersController < ApplicationController
   def update
     @photographer = Photographer.find(params[:id])
     if @photographer.update_attributes(photographer_params)
-      flash[:success] = "Profile updated"
+      flash[:success] = "プロフィールを更新しました"
       redirect_to @photographer
     else
       render 'edit'
+      flash[:danger] = "プロフィールを更新に失敗しました"
     end
   end
 

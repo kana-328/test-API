@@ -17,6 +17,18 @@
       <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
       </svg>パッケージ登録
     <% end %>
+    <hr>
+    </div>
+      <div class="row text-center">
+      <% @photographer.packages.each do |package| %>
+        <%= link_to image_tag(package.images[0].to_s), photographer_package_path(photographer_id: @photographer.id, id: package.id) %>
+        <h4><%= package.title %></h4>
+        <div>
+        <%= link_to "パッケージ編集", edit_photographer_package_path(photographer_id: @photographer.id), class: 'btn btn--orange' %> 
+        </div> 
+        <hr>
+      <% end %>
+      <% paginate @packages %>
     </div>
   </div>
 </div>
