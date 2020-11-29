@@ -1,6 +1,6 @@
 class ImageUploader < CarrierWave::Uploader::Base  
   include CarrierWave::MiniMagick
-  process resize_to_fit: [400, 200]
+  process resize_to_fill: [340, 340, 'Center']
 
   if Rails.env.production?
     storage :fog
@@ -10,10 +10,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
-  end
-
-  version :middle do
-    process resize_to_fill: [188, 188]
   end
 
   # アップロード可能な拡張子のリスト
