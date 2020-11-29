@@ -8,9 +8,12 @@
   </head>
   <body>
     <%= render 'layouts/header' %>
-    <%= notice %>
-    <%= alert %>
+    <div class="container">
+    <% flash.each do |message_type, message|  %>
+    <div class="alert alert-<%=message_type %>"><%=message %></div>
+    <% end %>
     <%= yield %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= debug(params) if Rails.env.development? %>
   </body>
 </html>

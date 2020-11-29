@@ -1,6 +1,5 @@
 <div class="container">
   <div class="row d-flex align-items-center">
-      <%= link_to 'プロフィール編集',edit_photographer_path(id: @photographer.id)  %>
     <ul class="photographer">
       <li>
         <%= gravatar_for @photographer %>
@@ -9,6 +8,7 @@
       <li><%= @photographer.descript %></li>
     </ul>  
   </div>
+  <% if logged_in? %>
   <div class="row">
     <div class="center-block text-center">
     <%= link_to new_photographer_package_path(photographer_id: @photographer.id), :method => :get do %>
@@ -17,6 +17,7 @@
       <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
       </svg>パッケージ登録
     <% end %>
+  <% end %>
     <hr>
     </div>
       <div class="row text-center">
