@@ -16,10 +16,20 @@
  
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ header{
+  position:static;
+ }
 
-.header-image{
+ .navbar-right{
+   position: relative;
+   top: 40px;
+   right: 60px;
+ }
+ .headerimage img {
+  width: 160px;
+  height: 100px;
+  margin-left: 55px;
   margin-top: 20px;
-  background-color: red;
 }
 
 .profile-line{
@@ -28,6 +38,7 @@
     background: #333;
     background-image: -webkit-linear-gradient(left, rgb(245, 186, 148), rgb(236, 162, 78), rgb(245, 186, 148));
 }
+
 
 .photographer{
   list-style: none;

@@ -31,3 +31,12 @@ $(document).on('change', '#package_prefecture_id', function() {
     console.log('errors.messages')
   });
 });
+
+
+var mySwiper = new Swiper ('.swiper-container', {
+  effect: "flip",
+  loop: true,
+  pagination: '.swiper-pagination',
+  nextButton: '.swiper-button-next',
+  prevButton: '.swiper-button-prev',
+})
