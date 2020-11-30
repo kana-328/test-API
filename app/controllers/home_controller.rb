@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @package = Category.preload(:packages)
+    @search = Category.preload(:packages).ransack(params[:q])
+    @packages = @search.result
   end
 end

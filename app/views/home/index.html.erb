@@ -1,4 +1,5 @@
-<% @package.each do |category| %>
+<%= render 'search', search: @search %>
+<% @packages.each do |category| %>
   <h3 class="category-name"><%= category.name %></h3>
   <div class='items'>
     <% category.packages.each do |package| %>

@@ -1,4 +1,6 @@
 class Package < ApplicationRecord
+  include AlgoliaSearch
+
   has_many :packages_and_categories
   has_many :categories, through: :packages_and_categories
   has_many :packages_and_tags
@@ -10,6 +12,11 @@ class Package < ApplicationRecord
   validate  :image_size
   validates :price, numericality: { only_integer: true }
 
+
+  algoliasearch do
+    attribute :title, :prefecture, :city, :photographer_id
+    searchableAttributes %w[title prefecture city photographer_id]
+  end
   private
 
     # アップロードされた画像のサイズをバリデーションする

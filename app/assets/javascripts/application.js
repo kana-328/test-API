@@ -16,6 +16,7 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+//= require algolia/v3/algoliasearch.min
 
 $(document).on('change', '#package_prefecture_id', function() {
   return $.ajax({
