@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
         log_in photographer
         params[:session][:remember_me] == '1' ? remember(photographer) : forget(photographer)
         redirect_back_or photographer
+        render json: { status: 'SUCCESS', data: photographer }
     else
       flash.now[:danger] = "アドレスとパスワードが一致しませんでした"
       render "new"

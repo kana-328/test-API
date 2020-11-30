@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-  devise_for :users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
   root to: "home#index"
   resources :sessions, only: [:new, :create, :destroy]
   resources :photographers,  only: [:new, :create, :show, :edit, :update] do

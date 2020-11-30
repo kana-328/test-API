@@ -20,7 +20,7 @@ services:
       - public-data:/test_app/public
       - log-data:/test_app/log
     ports:
-      - "3001:3000"
+      - "3000:3000"
     depends_on:
       - db
 

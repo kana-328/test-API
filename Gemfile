@@ -13,8 +13,6 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'dotenv-rails'
-gem 'devise'
-gem 'devise-i18n'
 gem 'rails-i18n', '~> 5.1'
 gem 'jquery-rails'
 gem 'rails-controller-testing'
@@ -24,8 +22,6 @@ gem "algoliasearch-rails"
 gem 'momentjs-rails'
 gem 'bootstrap-sass'
 gem 'rubyzip', '2.3.0'
-gem 'activeadmin'
-gem 'cancancan'
 gem 'draper'
 gem 'pundit'
 gem 'carrierwave'
@@ -53,12 +49,11 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'spring-commands-rspec'
-  gem 'rails-erd'
 end
 
 group :production do
   gem 'pg', '>= 0.18', '< 2.0'
-  gem 'fog', '1.40.0'
+  gem 'fog-aws'
 end
 gem "aws-sdk", "~> 2.3"
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
