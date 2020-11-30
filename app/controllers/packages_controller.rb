@@ -1,8 +1,9 @@
 class PackagesController < ApplicationController
+  require "json"
 
   def show
     @package = Package.find(params[:id])
-
+    @day = JSON.parse(@package.day)
   end
 
   def new

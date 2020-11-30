@@ -20,6 +20,7 @@ gem 'jquery-rails'
 gem 'rails-controller-testing'
 gem 'faker'
 gem 'kaminari'
+gem "algoliasearch-rails"
 gem 'momentjs-rails'
 gem 'bootstrap-sass'
 gem 'rubyzip', '2.3.0'

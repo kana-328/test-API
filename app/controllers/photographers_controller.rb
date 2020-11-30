@@ -15,6 +15,7 @@ class PhotographersController < ApplicationController
     @photographer = Photographer.new(photographer_params)
     if @photographer.save
       flash[:notice] = 'カメラマン情報を登録しました'
+      log_in @photographer
       redirect_to @photographer
     else
       render "new"
