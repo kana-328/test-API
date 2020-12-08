@@ -1,22 +1,22 @@
-class PackagesController < ApplicationController
+class PostsController < ApplicationController
   require "json"
 
   def show
-    @package = Package.find(params[:id])
-    @day = JSON.parse(@package.day)
+    @post = Post.find(params[:id])
+    @day = JSON.parse(@post.day)
   end
 
   def new
-    @package = Package.new
+    @post= Post.new
   end
 
   def create
     @id = params[:photographer_id]
-    @package = Package.new(package_params)
-    @package.photographer_id = @id
-    if @package.save
+    @post = Post.new(post_params)
+    @post.photographer_id = @id
+    if @post.save
       flash[:success] = 'パッケージを登録しました'
-      redirect_to photographer_path(id: @package.photographer_id)
+      redirect_to photographer_path(id: @post.photographer_id)
     else
       render "new"
       flash[:danger] = '登録が失敗しました'
@@ -24,23 +24,23 @@ class PackagesController < ApplicationController
   end
 
   def edit
-    @package = Package.find(params[:id])
+    @post = Post.find(params[:id])
   end
 
   def update
-    @package = Package.find(params[:id])
-    if @package.update_attributes(package_params)
+    @post = Post.find(params[:id])
+    if @post.update_attributes(post_params)
       flash[:success] = "パッケージを編集しました"
-      redirect_to photographer_path(id: @package.photographer_id)
+      redirect_to photographer_path(id: @post.photographer_id)
     else
       render 'edit'
     end
   end
 
   def destroy
-    package = Package.find_by(id: params[:id]).destroy
+    post = Post.find_by(id: params[:id]).destroy
     flash[:notice] = 'パッケージを削除しました'
-    redirect_to photographer_path(id: package.photographer_id)
+    redirect_to photographer_path(id: post.photographer_id)
   end
   
   def get_cities
@@ -48,7 +48,7 @@ class PackagesController < ApplicationController
   end
 
   private
-    def package_params
-      params.require(:package).permit(:title, :descript, :price, :prefecture_id, :city_id, { category_ids: [], images: [], day: []} )
+    def post_params
+      params.require(:post).permit(:title, :descript, :price, :prefecture_id, :city_id, { category_ids: [], images: [], day: []} )
     end
 end

@@ -1,2 +1,2 @@
-module PackagesHelper
+module PostesHelper
 end

@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :packages_and_category do
+  factory :posts_and_category do
     
   end
 end

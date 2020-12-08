@@ -1,4 +1,4 @@
-class PackagesAndTag < ApplicationRecord
-  belongs_to :package
+class postsAndTag < ApplicationRecord
+  belongs_to :post
   belongs_to :tag
 end

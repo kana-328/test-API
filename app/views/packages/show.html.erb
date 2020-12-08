@@ -1,31 +1,31 @@
-<% @package.images.each do |image| %>
-  <%= image_tag image.to_s, class: 'package-top-image' %>
+<% @post.images.each do |image| %>
+  <%= image_tag image.to_s, class: 'post-top-image' %>
 <% end %>
 <div class="container text-center">
   <div class="row">
   </div>
   <div class="row">
-    <h2><%= @package.title %></h2>
+    <h2><%= @post.title %></h2>
     <hr>
   </div>
   <div class="row">
-    <%= gravatar_for @package.photographer %>
-    <%= link_to @package.photographer.name, photographer_path(@package.photographer.id) %>
+    <%= gravatar_for @post.photographer %>
+    <%= link_to @post.photographer.name, photographer_path(@post.photographer.id) %>
     <hr>
   </div>
   <div class="row">
     <h4>エリア</h4>
-      <%= @package.prefecture.name %><%= @package.city.name %>
+      <%= @post.prefecture.name %><%= @post.city.name %>
     <hr>
   </div>
   <div class="row">
     <h4>説明</h4>
-    <%= @package.descript %>
+    <%= @post.descript %>
   </div>
   <hr>
   <div class="row">
     <h4>料金</h4>
-    <%= @package.price %>
+    <%= @post.price %>
   </div>
   <hr>
   <div class="row">

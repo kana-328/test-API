@@ -4,7 +4,7 @@ class PhotographersController < ApplicationController
   
   def show
     @photographer = Photographer.find(params[:id])
-    @packages = @photographer.packages.page(params[:page])
+    @posts = @photographer.posts.page(params[:page])
   end
 
   def new

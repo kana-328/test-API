@@ -1,6 +1,6 @@
 class Photographer < ApplicationRecord
   attr_accessor :remember_token
-  has_many :packages, dependent: :destroy
+  has_many :posts, dependent: :destroy
   validates :name, presence: true, allow_blank: true, length: { maximum: 15 }
   validates :email, presence: true
   validates :email, length: { maximum: 255 },

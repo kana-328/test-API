@@ -1,6 +1,6 @@
-<div class="container package-new-area">
-  <%= form_for(@package, url:  photographer_packages_path) do |f| %>
-    <%= hidden_field_tag :photographer_id, @package.photographer_id %>
+<div class="container post-new-area">
+  <%= form_for(@post, url:  photographer_posts_path) do |f| %>
+    <%= hidden_field_tag :photographer_id, @post.photographer_id %>
     <div class="col-md-offset-2 f-group">
       <%= f.label :day, '曜日(必須)' %><br>
       <%= f.check_box :day, {multiple: true}, "月曜日", nil %>月曜日
@@ -13,7 +13,7 @@
     </div>
     <div class="col-md-offset-2 f-group" id="prefecture-area">
       <%= f.label :prefecture, 'エリア' %><br>
-      <%= collection_select :package, :prefecture_id, Prefecture.all, :id, :name %>
+      <%= collection_select :post, :prefecture_id, Prefecture.all, :id, :name %>
     </div>
     <div class="city-area col-md-offset-2 form-group">
       <%= render partial: 'select_city', locals: {prefecture_id: Prefecture.first.id} %>

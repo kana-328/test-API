@@ -1,16 +1,16 @@
-// Place all the styles related to the packages controller here.
+// Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.package-new-area{
+.post-new-area {
   margin-top: 30px;
 }
 
-.control-label{
-  width: 40px
+.control-label {
+  width: 40px;
 }
 
-.package-top-image{
+.post-top-image {
   width: 80%;
 }
 
@@ -27,5 +27,5 @@ a.btn--orange:hover {
 }
 
 a.btn--radius {
-   border-radius: 100vh;
+  border-radius: 100vh;
 }

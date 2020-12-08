@@ -1,3 +1,3 @@
 class Tag < ApplicationRecord
-  has_many :packages_and_tags
+  has_many :posts_and_tags
 end

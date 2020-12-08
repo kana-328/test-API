@@ -1,10 +1,10 @@
-<% @packages.each do |category| %>
+<% @posts.each do |category| %>
   <h3 class="category-name"><%= category.name %></h3>
   <div class='items'>
-    <% category.packages.each do |package| %>
+    <% category.posts.each do |post| %>
       <div class='item'>
-        <%= link_to image_tag(package.images[0].to_s), photographer_package_path(photographer_id: package.photographer_id, id: package.id), class: "category-image" %><br>
-        <%= package.title %> 
+        <%= link_to image_tag(post.images[0].to_s), photographer_post_path(photographer_id: post.photographer_id, id: post.id), class: "category-image" %><br>
+        <%= post.title %> 
       </div>
     <% end %>
   </div>

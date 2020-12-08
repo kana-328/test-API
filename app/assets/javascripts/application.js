@@ -18,10 +18,10 @@
 //= require_tree .
 //= require algolia/v3/algoliasearch.min
 
-$(document).on('change', '#package_prefecture_id', function() {
+$(document).on('change', '#post_prefecture_id', function() {
   return $.ajax({
     type: 'GET',
-    url: '/photographers/:photographer_id/packages/get_cities',
+    url: '/photographers/:photographer_id/posts/get_cities',
     data: {
       prefecture_id: $(this).val()
     }

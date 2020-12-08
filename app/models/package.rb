@@ -1,9 +1,9 @@
-class Package < ApplicationRecord
+class Post < ApplicationRecord
   include AlgoliaSearch
 
-  has_many :packages_and_categories
-  has_many :categories, through: :packages_and_categories, dependent: :destroy
-  has_many :packages_and_tags
+  has_many :posts_and_categories
+  has_many :categories, through: :posts_and_categories, dependent: :destroy
+  has_many :posts_and_tags
   belongs_to :photographer
   belongs_to :city
   belongs_to :prefecture
