@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_30_160821) do
+ActiveRecord::Schema.define(version: 2020_12_08_141924) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,34 +26,6 @@ ActiveRecord::Schema.define(version: 2020_11_30_160821) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "prefecture_id"
-  end
-
-  create_table "packages", force: :cascade do |t|
-    t.string "title", null: false
-    t.text "descript", null: false
-    t.integer "price", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "images"
-    t.string "day"
-    t.integer "city_id"
-    t.integer "prefecture_id"
-    t.bigint "photographer_id"
-    t.index ["photographer_id"], name: "index_packages_on_photographer_id"
-  end
-
-  create_table "packages_and_categories", force: :cascade do |t|
-    t.integer "category_id", null: false
-    t.integer "package_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "packages_and_tags", force: :cascade do |t|
-    t.integer "package_id", null: false
-    t.integer "tag_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "photographers", force: :cascade do |t|
@@ -75,6 +47,34 @@ ActiveRecord::Schema.define(version: 2020_11_30_160821) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "posts", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "descript", null: false
+    t.integer "price", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "images"
+    t.string "day"
+    t.integer "city_id"
+    t.integer "prefecture_id"
+    t.bigint "photographer_id"
+    t.index ["photographer_id"], name: "index_posts_on_photographer_id"
+  end
+
+  create_table "posts_and_categories", force: :cascade do |t|
+    t.integer "category_id", null: false
+    t.integer "post_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "posts_and_tags", force: :cascade do |t|
+    t.integer "post_id", null: false
+    t.integer "tag_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "prefectures", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -87,5 +87,5 @@ ActiveRecord::Schema.define(version: 2020_11_30_160821) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "packages", "photographers"
+  add_foreign_key "posts", "photographers"
 end
